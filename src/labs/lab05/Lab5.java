@@ -19,14 +19,11 @@ public class Lab5 {
         }
         if (grade < 50) {
             System.out.println("Fail");
-        }
-        if (grade >= 50 && grade <= 60) {
+        } else if (grade <= 60) {
             System.out.println("Pass");
-        }
-        if (grade >= 61 && grade <= 70) {
+        } else if (grade <= 70) {
             System.out.println("Merit");
-        }
-        if (grade >= 71 && grade <= 100) {
+        } else {
             System.out.println("Distinction");
         }
         
@@ -36,17 +33,30 @@ public class Lab5 {
     public void Part2(){
         String answer = getString("Is it Summer?");
         Boolean isSummer = answer.equalsIgnoreCase("yes");
-        String eveningAnswer = getString("Is it earlyevening?");
+        String eveningAnswer = getString("Is it a sunny evening?");
         Boolean isEvening = eveningAnswer.equalsIgnoreCase("yes");
-        System.out.println("Take a shower: ");
+        
+        System.out.println("Take a shower");
+        System.out.println("Contact friends");
+
         if(isSummer && isEvening) {
-            System.out.println("Eat outside");
-        } else {
+            System.out.println("Eat outside");            
+            System.out.println("Do outdoors hobby");
+         } 
+        else if(isSummer && !isEvening) {
+            System.out.println("Eat inside");
+            System.out.println("Do outdoors hobby");
+         }
+
+        else if(!isSummer && isEvening) {
+            System.out.println("Eat inside");
+            System.out.println("Take a walk");
+        }
+        else if(!isSummer && !isEvening) {
             System.out.println("Eat inside");
         }
+            
     }
-
-        
 
     public static String getString(String prompt) {
         System.out.println(prompt);
